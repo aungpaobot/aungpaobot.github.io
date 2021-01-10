@@ -7,4 +7,4 @@ bot.on('ready', () => {
 });
 
 bot.on('message', message => { messageHandle.messageHandle(message) });
-bot.login('NzAyOTEzMzk5ODAxMTE4OTEx.XqG9Hg.iryHnbGUpTjQ5sWO4QMl-DmcQ_U');
+bot.login(process.env.BOT_TOKEN);
