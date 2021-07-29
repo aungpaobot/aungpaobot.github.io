@@ -30,9 +30,9 @@ function messageHandle (message) {
       date1 = new Date(2021, 02, 16);
       date2 = new Date();
       diff = Math.floor((date1 - date2) / (1000 * 60 * 60 * 24));
-      message.channel.send("วันครบรอบของ เจ้น กับ กัล \nวันที่ 16 มีนาคม 2560\nเหลืออีก " + diff + " วัน ถึงครบรอบ 4 ปี");
+      message.channel.send(diff);
     } else if (args[1] === 'covid' || args[1] === 'cvd') {
-      fetch('https://covid19.th-stat.com/api/open/today').then((response) => {
+      fetch('https://covid19.th-stat.com/json/covid19v2/getTodayCases.json').then((response) => {
         return response.json()
         }).then((data) => {
           message.channel.send({ embed: covidEmbed.createCovidEmbed(data) });
