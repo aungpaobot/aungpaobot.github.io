@@ -10,23 +10,23 @@ function createCovidEmbed(data) {
     fields: [
       {
         name: 'วันที่',
-        value: data.UpdateDate
+        value: data.txn.date
       },
       {
         name: 'จำนวนผู้ติดโควิด',
-        value: data.NewConfirmed,
+        value: data.new_case,
         inline: true
       }, {
         name: "จำนวนผู้ที่กำลังรักษา",
-        value: data.NewRecovered,
+        value: data.new_recovered,
         inline: true
       }, {
         name: "จำนวนผู้ป่วยที่รักษาหายแล้ว",
-        value: data.NewHospitalized,
+        value: data.total_recovered,
         inline: true
       }, {
         name: "จำนวนผู้เสียชีวิต",
-        value: data.NewDeaths,
+        value: data.new_death,
         inline: true
       }
     ],

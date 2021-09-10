@@ -32,10 +32,10 @@ function messageHandle (message) {
       diff = Math.floor((date1 - date2) / (1000 * 60 * 60 * 24));
       message.channel.send(diff);
     } else if (args[1] === 'covid' || args[1] === 'cvd') {
-      fetch('https://covid19.th-stat.com/json/covid19v2/getTodayCases.json').then((response) => {
+      fetch('https://covid19.ddc.moph.go.th/api/Cases/today-cases-all').then((response) => {
         return response.json()
         }).then((data) => {
-          message.channel.send({ embed: covidEmbed.createCovidEmbed(data) });
+          message.channel.send({ embed: covidEmbed.createCovidEmbed(data[0]) });
         })
     } else if (args[1] === 'invite') {
         message.channel.send({ embed: inviteEmbed });
