@@ -1,4 +1,5 @@
 function createCovidEmbed(data) {
+  let date = new Date(data.txn_date);
   const embed = {
     color: 0xa71b1b,
     title: 'Covid Daily',
@@ -10,23 +11,27 @@ function createCovidEmbed(data) {
     fields: [
       {
         name: 'วันที่',
-        value: data.txn.date
+        value: date.toLocaleDateString('th-TH',{year: 'numeric',month:'long',day:'numeric'})
       },
       {
         name: 'จำนวนผู้ติดโควิด',
-        value: data.new_case,
+        value: data.new_case.toLocaleString(),
         inline: true
       }, {
         name: "จำนวนผู้ที่กำลังรักษา",
-        value: data.new_recovered,
-        inline: true
-      }, {
-        name: "จำนวนผู้ป่วยที่รักษาหายแล้ว",
-        value: data.total_recovered,
+        value: data.new_recovered.toLocaleString(),
         inline: true
       }, {
         name: "จำนวนผู้เสียชีวิต",
-        value: data.new_death,
+        value: data.new_death.toLocaleString(),
+        inline: true
+      }, {
+        name: "จำนวนผู้ติดโควิดทั้งหมด",
+        value: data.total_case.toLocaleString(),
+        inline: true
+      }, {
+        name: "จำนวนผู้ป่วยที่รักษาหายแล้ว",
+        value: data.total_recovered.toLocaleString(),
         inline: true
       }
     ],

@@ -8,4 +8,5 @@ bot.on('ready', () => {
 
 bot.on('message', message => { messageHandle.messageHandle(message) });
 
-bot.login(process.env.BOT_TOKEN);
+// bot.login(process.env.BOT_TOKEN);
+bot.login('NzAyOTEzMzk5ODAxMTE4OTEx.XqG9Hg.W81A4ZoBhfZXU1Nu_SJu_5v5ZEk');
