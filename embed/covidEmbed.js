@@ -33,6 +33,9 @@ function createCovidEmbed(data) {
         name: "จำนวนผู้ป่วยที่รักษาหายแล้ว",
         value: data.total_recovered.toLocaleString(),
         inline: true
+      }, {
+        name: 'Covid website',
+        value: 'http://symonhoiji.com/covid'
       }
     ],
     timestamp: new Date()
